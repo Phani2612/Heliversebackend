@@ -78,12 +78,12 @@ const Login = async (req, res) => {
 
         const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1h" });
         
-        res.cookie('Token', token, {
-          httpOnly: true,      // Prevents access to cookies via JavaScript
-          secure: true,        // Ensures cookies are sent over HTTPS
-          sameSite: 'None',  // Ensures cookies are only sent to the same site
-          maxAge: 3600000,     // 1 hour in milliseconds
-        });
+     res.cookie('Token', token, {
+  httpOnly: true, // Prevents access to cookies via JavaScript
+  secure: process.env.NODE_ENV === 'production', // Set to true in production and false in development
+  sameSite: 'None', // Ensures cookies are only sent to the same site
+  maxAge: 3600000, // 1 hour in milliseconds
+});
         
       
 
