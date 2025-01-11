@@ -5,6 +5,7 @@ const authenticateToken = (req, res, next) => {
     // Get the token from cookies
     const token = req.cookies.Token;
 
+    console.log("Token" , token)
  
 
     // Check if token exists
