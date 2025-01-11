@@ -81,7 +81,7 @@ const Login = async (req, res) => {
         res.cookie('Token', token, {
           httpOnly: true,      // Prevents access to cookies via JavaScript
           secure: true,        // Ensures cookies are sent over HTTPS
-          sameSite: 'Strict',  // Ensures cookies are only sent to the same site
+          sameSite: 'None',  // Ensures cookies are only sent to the same site
           maxAge: 3600000,     // 1 hour in milliseconds
         });
         
