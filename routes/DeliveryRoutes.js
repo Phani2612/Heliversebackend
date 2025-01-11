@@ -6,7 +6,7 @@ const authenticateToken = require('../middlewares/Middleware')
 
 const {UpdateDelivery , GetAlldata} = require('../controllers/DeliveryHandling')
 
-Router.get('/all/:User' , authenticateToken ,  GetAlldata)
-Router.patch('/update' , authenticateToken , UpdateDelivery)
+Router.get('/all/:User'  ,  GetAlldata)
+Router.patch('/update', UpdateDelivery)
 
 module.exports = Router
