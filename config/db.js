@@ -8,8 +8,7 @@ const ConnectDB = async()=>{
 
           const Conn = await Mongoose.connect(process.env.MONGODB_URL , {
               
-               useNewUrlParser : true,
-               useUnifiedTopology : true
+               
 
           })
 
