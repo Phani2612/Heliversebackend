@@ -20,8 +20,10 @@ App.use(Express.json())
 App.use(Express.urlencoded({ extended: true }))
 
 App.use(CORS({
-    origin: 'https://heliversefrontend-theta.vercel.app', // Replace with your frontend domain
-  credentials: true               // Allow cookies to be sent
+     origin: 'https://heliversefrontend-theta.vercel.app',  // Replace with your frontend domain
+  credentials: true,  // Allow cookies to be sent with requests
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],  // Allowed methods (if needed)
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers (you may add others as necessary)
 
 }))
 
