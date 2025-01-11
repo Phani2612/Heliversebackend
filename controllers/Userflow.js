@@ -78,14 +78,14 @@ const Login = async (req, res) => {
 
         const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1h" });
         
-     res.cookie('Token', token, {
-expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
+    res.cookie("token", token, {
+    expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000),
     httpOnly: true,
     path: "/",
     sameSite: "None", // Only use with HTTPS
     secure: true // Only use with HTTPS
 });
-        
+
       
 
         if (Result.UT_Type === 'Manager') {
