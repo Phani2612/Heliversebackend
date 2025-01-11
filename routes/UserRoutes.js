@@ -11,7 +11,7 @@ Router.post('/login' , Login)
 Router.post('/signup' , SignUp)
 
 
-Router.post('/save/patients' , authenticateToken , PatientData)
+Router.post('/save/patients' , PatientData)
 
 
 
