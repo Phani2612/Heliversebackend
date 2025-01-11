@@ -6,13 +6,13 @@ const authenticateToken = require("../middlewares/Middleware");
 
 const {MealSave , DisplayMeals , MealUpdates , MealDeliveryEmailUpdate , HandleDelay} = require('../controllers/Mealshandling')
 
-Router.post('/save'  , authenticateToken ,MealSave)
-Router.get('/all' , authenticateToken, DisplayMeals)
+Router.post('/save' ,MealSave)
+Router.get('/all' , DisplayMeals)
 
-Router.patch('/update' , authenticateToken ,MealUpdates)
-Router.patch('/update-email' ,  authenticateToken , MealDeliveryEmailUpdate)
+Router.patch('/update' , MealUpdates)
+Router.patch('/update-email'  , MealDeliveryEmailUpdate)
 
-Router.get('/delay' , authenticateToken ,  HandleDelay)
+Router.get('/delay' ,   HandleDelay)
 
 module.exports = Router
 
